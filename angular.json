@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "jasmine-demo"
+    }
+  },
+  "defaultProject": "jasmine-demo",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }
