@@ -21,7 +21,7 @@ describe('AppService', () => {
     httpTestingController = TestBed.get(HttpTestingController);
   }));
 
-  it('http flush error.', () => {
+  it('mock http,flush error.', () => {
     const emsg = 'deliberate 404 error';
     appService.get().subscribe(data => fail('should have failed with the 404 error'),
       (error: HttpErrorResponse) => {
@@ -33,7 +33,7 @@ describe('AppService', () => {
     req.flush(emsg, { status: 404, statusText: 'Not Found' });
   });
 
-  it('http request.error.', () => {
+  it('mock http,request.error.', () => {
     const emsg = 'deliberate 404 error';
     appService.get().subscribe(data => fail('should have failed with the 404 error'),
       (error: HttpErrorResponse) => {
