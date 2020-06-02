@@ -34,10 +34,10 @@ describe('AppService', () => {
   });
 
   it('mock http,request.error.', () => {
-    const emsg = 'deliberate 404 error';
+    const emsg = 'deliberate 500 error';
     appService.get().subscribe(data => fail('should have failed with the 404 error'),
       (error: HttpErrorResponse) => {
-        expect(error.status).toEqual(404, 'status');
+        expect(error.status).toEqual(500, 'status');
         expect(error.headers.get('test')).toEqual('header-test-value', 'headers expectationFailOutput message')
         expect(error.error.message).toEqual(emsg, 'error.message expectationFailOutput message');
       });
@@ -52,7 +52,7 @@ describe('AppService', () => {
       headers: {
         test: 'header-test-value'
       },
-      status: 404,
+      status: 500,
       statusText: 'not found',
     });
   });
